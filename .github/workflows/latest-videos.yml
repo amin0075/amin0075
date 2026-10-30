@@ -1,0 +1,39 @@
+name: Latest videos
+
+# Twice a day: once in the morning, once after the 18:00 UK posting slot.
+on:
+  schedule:
+    - cron: "17 7,19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: latest-videos
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Refresh the list from YouTube
+        run: node scripts/update-videos.mjs
+
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "No new videos."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh latest videos" README.md
+          git push
