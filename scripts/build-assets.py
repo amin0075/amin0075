@@ -204,7 +204,7 @@ class Face:
 RISE = """<style>
 .r{animation:rise 0.9s cubic-bezier(0.37,0,0.63,1) both}
 .d1{animation-delay:0.15s}.d2{animation-delay:0.45s}.d3{animation-delay:0.75s}
-.d4{animation-delay:1.05s}.d5{animation-delay:1.35s}
+.d4{animation-delay:1.05s}
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.r{animation:none}}
 </style>"""
@@ -233,199 +233,172 @@ def write(name, theme, svg):
 
 
 # ---------------------------------------------------------------------------
-# Assets
+# Assets: kept compact so the whole profile reads in one or two screens.
 # ---------------------------------------------------------------------------
 
 
-def banner(f, theme, c):
-    w, h, pad = 1200, 440, 64
-    head = [
-        f'<g class="r d1">'
-        + f["display"].spans(
+def banner(f, c):
+    w, h, pad = 1200, 280, 56
+    groups = [
+        f["display"].spans(
             [("amin", c["text"]), ("_", c["accent"]), ("decods", c["text"])],
-            30, pad, 92, tracking=-0.02,
+            26, pad, 70, tracking=-0.02,
         )
-        + f["mono"].text(SITE, 14, w - pad, 88, c["muted"], tracking=0.02, anchor="end")
-        + "</g>",
-        f'<g class="r d2">'
-        + f["mono_medium"].text(
-            "FULL-STACK SOFTWARE ENGINEER", 15, pad, 178, c["accent"], tracking=0.16
-        )
-        + "</g>",
-        f'<g class="r d3">'
-        + f["display"].text("Building software.", 68, pad, 250, c["text"], tracking=-0.025)
-        + "</g>",
-        f'<g class="r d4">'
-        + f["display"].text("Decoding technology.", 68, pad, 322, c["accent"], tracking=-0.025)
-        + "</g>",
-        f'<g class="r d5">'
-        + f["body"].text(
-            "Practical videos on full-stack development, AI and new technology,",
-            20, pad, 378, c["muted"],
-        )
-        + f["body"].text(
-            "backed by 6+ years of product engineering experience.", 20, pad, 406, c["muted"]
-        )
-        + "</g>",
+        + f["mono"].text(SITE, 13, w - pad, 66, c["muted"], tracking=0.02, anchor="end"),
+        f["mono_medium"].text(
+            "FULL-STACK SOFTWARE ENGINEER", 14, pad, 138, c["accent"], tracking=0.16
+        ),
+        f["display"].spans(
+            [("Building software. ", c["text"]), ("Decoding technology.", c["accent"])],
+            52, pad, 198, tracking=-0.025,
+        ),
+        f["body"].text(
+            "Practical videos on full-stack development, AI and new technology.",
+            19, pad, 240, c["muted"],
+        ),
     ]
-    body = panel(w, h, c["ground"], c["line"], 18) + "".join(head)
+    body = panel(w, h, c["ground"], c["line"], 18) + "".join(
+        f'<g class="r d{i + 1}">{group}</g>' for i, group in enumerate(groups)
+    )
     label = "Amin Keshavarzi, full-stack software engineer. Building software. Decoding technology."
     return document(w, h, label, body, RISE)
 
 
 BUTTONS = [
-    ("youtube", "YouTube", HANDLE),
-    ("instagram", "Instagram", HANDLE),
-    ("tiktok", "TikTok", "@akeshavarzi_dev"),
-    ("x", "X", HANDLE),
-    ("threads", "Threads", HANDLE),
-    ("linkedin", "LinkedIn", "amin-keshavarzi"),
-    ("website", "Website", SITE),
+    ("youtube", "YouTube"),
+    ("instagram", "Instagram"),
+    ("tiktok", "TikTok"),
+    ("x", "X"),
+    ("threads", "Threads"),
+    ("linkedin", "LinkedIn"),
+    ("website", "Website"),
 ]
 
 
-def button(f, c, label, handle, primary):
-    w, h = 190, 60
+def button(f, c, label, primary):
+    size, pad, h = 15, 14, 36
+    arrow_gap, arrow_w = 8, f["mono"].width("↗", 13)
+    w = pad * 2 + f["display_semibold"].width(label, size, -0.01) + arrow_gap + arrow_w
     fill, ink, sub = (
         (c["accent"], c["on_accent"], c["on_accent"])
         if primary
         else (c["surface"], c["text"], c["muted"])
     )
-    stroke = c["accent"] if primary else c["line"]
     body = (
-        panel(w, h, fill, stroke, 12)
-        + f["display_semibold"].text(label, 17, 18, 27, ink, tracking=-0.01)
-        + f["mono"].text(handle, 12, 18, 45, sub)
-        + f["mono"].text("↗", 15, w - 18, 35, sub, anchor="end")
+        panel(w, h, fill, c["accent"] if primary else c["line"], 10)
+        + f["display_semibold"].text(label, size, pad, 23.5, ink, tracking=-0.01)
+        + f["mono"].text("↗", 13, w - pad, 23, sub, anchor="end")
     )
-    return document(w, h, f"{label} {handle}", body)
+    return document(w, h, label, body)
 
 
 SECTIONS = [
-    ("videos", "01", "Latest videos"),
-    ("work", "02", "Selected work"),
-    ("toolbox", "03", "Toolbox"),
+    ("videos", "01", "LATEST VIDEOS"),
+    ("work", "02", "SELECTED WORK"),
 ]
 
 
-def heading(f, c, number, title):
-    title_width = f["display"].width(title, 30, -0.02)
-    w, h = max(title_width, 120) + 4, 66
-    rule_x = f["mono_medium"].width(number, 13, 0.2) + 10
+def kicker(f, c, number, title):
+    """The site's section eyebrow: number, short rule, label."""
+    size, tracking = 13, 0.16
+    number_w = f["mono_medium"].width(number, size, tracking)
+    rule_x = number_w + 10
+    title_x = rule_x + 24 + 10
+    w = title_x + f["mono_medium"].width(title, size, tracking) + 2
     body = (
-        f["mono_medium"].text(number, 13, 1, 18, c["accent"], tracking=0.2)
-        + f'<rect x="{_num(rule_x)}" y="12" width="28" height="1.5" fill="{c["accent"]}" opacity="0.6"/>'
-        + f["display"].text(title, 30, 0, 56, c["text"], tracking=-0.02)
+        f["mono_medium"].text(number, size, 0, 15, c["accent"], tracking=tracking)
+        + f'<rect x="{_num(rule_x)}" y="9.5" width="24" height="1.5" fill="{c["accent"]}" opacity="0.6"/>'
+        + f["mono_medium"].text(title, size, title_x, 15, c["text"], tracking=tracking)
     )
-    return document(w, h, title, body)
+    return document(w, 20, title.title(), body)
 
 
 PROJECTS = [
     (
         "circulearn",
         "CircuLearn",
-        "circulearn.co.uk",
-        "My MSc project, now open source. A logic-circuit simulator used in teaching and featured on the React Flow showcase.",
-        "Next.js · React Flow · Node.js · Postgres · Redis",
+        "My open-source MSc project, used in teaching and on the React Flow showcase.",
+        "Next.js · React Flow · Node.js · Postgres",
     ),
     (
         "diba-delights",
         "Diba Delights",
-        "diba-delights.co.uk",
-        "Storefront for a Chester bakery, built end to end: menu, dietary filters, cart and accounts.",
-        "Next.js · TypeScript · Tailwind · Neon · Better Auth",
+        "Storefront for a Chester bakery: menu, dietary filters, cart and accounts.",
+        "Next.js · TypeScript · Neon · Better Auth",
     ),
     (
         "bridge-st-coffee",
         "Bridge St Coffee",
-        "bridgestcoffee.co.uk",
-        "Site for a Chester coffee shop, from the menu and gallery to where to find them.",
-        "Next.js · TypeScript · Tailwind · Neon · Redis",
+        "Site for a Chester coffee shop: menu, gallery and how to find them.",
+        "Next.js · TypeScript · Tailwind · Neon",
     ),
     (
         "portfolio",
         "Portfolio and videos",
-        SITE,
-        "Where my work and videos live. New YouTube uploads show up there on their own.",
-        "Next.js 16 · TypeScript · Tailwind · Motion",
+        "Where my work and videos live. New uploads show up there on their own.",
+        "Next.js 16 · TypeScript · Tailwind",
     ),
 ]
 
 
-def card(f, c, slug, title, domain, description, tech):
-    w, pad = 560, 24
-    shot_h = (w - 2) * 10 / 16
+def card(f, c, slug, title, description, tech):
+    w, h, inset = 560, 144, 12
+    thumb_w, thumb_h = 192, 120
     image = base64.b64encode((SOURCES / f"{slug}.jpg").read_bytes()).decode()
-    lines = f["body"].wrap(description, 15, w - 2 * pad)[:3]
-    y = shot_h + 44
-    text = f["display_semibold"].text(title, 24, pad, y, c["text"], tracking=-0.015)
-    text += f["mono"].text(f"{domain} ↗", 12, w - pad, y - 2, c["muted"], anchor="end")
+    x = inset + thumb_w + 18
+    lines = f["body"].wrap(description, 14.5, w - x - 18)
+    if len(lines) > 2:
+        sys.exit(f"{title}: description needs {len(lines)} lines, the card fits 2. Shorten it.")
+    text = f["display_semibold"].text(title, 20, x, 40, c["text"], tracking=-0.015)
+    text += f["mono"].text("↗", 13, w - 18, 38, c["muted"], anchor="end")
     for i, line in enumerate(lines):
-        text += f["body"].text(line, 15, pad, y + 30 + i * 22, c["muted"])
-    tech_y = y + 30 + len(lines) * 22 + 16
-    text += f["mono"].text(tech, 12, pad, tech_y, c["accent"])
-    h = tech_y + 26
-    clip = (
-        f'<clipPath id="shot"><path d="M1 17A16 16 0 0 1 17 1H{_num(w - 17)}'
-        f'A16 16 0 0 1 {_num(w - 1)} 17V{_num(shot_h + 1)}H1Z"/></clipPath>'
-    )
+        text += f["body"].text(line, 14.5, x, 67 + i * 20.5, c["muted"])
+    text += f["mono"].text(tech, 12, x, 122, c["accent"])
     body = (
-        panel(w, h, c["surface"], c["line"], 16)
-        + f"<defs>{clip}</defs>"
-        + f'<image clip-path="url(#shot)" x="1" y="1" width="{_num(w - 2)}" '
-        f'height="{_num(shot_h)}" preserveAspectRatio="xMidYMid slice" '
+        panel(w, h, c["surface"], c["line"], 14)
+        + f'<defs><clipPath id="thumb"><rect x="{inset}" y="{inset}" '
+        f'width="{thumb_w}" height="{thumb_h}" rx="8"/></clipPath></defs>'
+        + f'<image clip-path="url(#thumb)" x="{inset}" y="{inset}" width="{thumb_w}" '
+        f'height="{thumb_h}" preserveAspectRatio="xMidYMin slice" '
         f'href="data:image/jpeg;base64,{image}"/>'
-        + f'<rect x="1" y="{_num(shot_h + 1)}" width="{_num(w - 2)}" height="1" fill="{c["line"]}"/>'
+        + f'<rect x="{inset + 0.5}" y="{inset + 0.5}" width="{thumb_w - 1}" '
+        f'height="{thumb_h - 1}" rx="8" fill="none" stroke="{c["line"]}"/>'
         + text
     )
     return document(w, h, f"{title}: {description}", body)
 
 
-TOOLBOX = [
-    ("Frontend", "React · Next.js · TypeScript · JavaScript · Vue.js · Nuxt"),
-    ("Styling & UI", "Tailwind CSS · SCSS · shadcn/ui · Material-UI"),
-    ("Backend & data", "Node.js · Express · PostgreSQL (Neon) · Redis · Drizzle · Prisma · Better Auth"),
-    ("AI engineering", "LLM integrations · Agent harnesses · Skills · System prompts · Evals · RAG"),
-    ("Testing", "Playwright · Vitest · Jest · Cypress · Storybook"),
-    ("Cloud & DevOps", "Vercel · AWS · Azure · DigitalOcean · Docker · Nginx · GitHub Actions"),
-]
+TOOLBOX = (
+    "React · Next.js · TypeScript · Tailwind CSS · shadcn/ui · Node.js · Express · "
+    "PostgreSQL · Redis · Drizzle · Better Auth · LLM integrations · Agents · RAG · "
+    "Playwright · Vitest · Vercel · Docker · AWS · Azure"
+)
 
 
 def toolbox(f, c):
-    pad, label_w, row_h, size, sep = 32, 220, 48, 17, "  ·  "
-    # Same 1200 width as the banner and footer, so all three scale alike;
-    # wider only if a row would otherwise run off the card.
-    widest = max(f["body"].width(items.replace(" · ", sep), size) for _, items in TOOLBOX)
-    w = max(1200, pad * 2 + label_w + widest)
-    h = pad * 2 + row_h * len(TOOLBOX) - 14
-    body = panel(w, h, c["surface"], c["line"], 16)
-    for i, (label, items) in enumerate(TOOLBOX):
-        y = pad + 20 + i * row_h
-        body += f["mono_medium"].text(label.upper(), 13, pad, y - 1, c["muted"], tracking=0.14)
+    w, pad, label_w, size, sep, line_h = 1200, 32, 150, 18, "  ·  ", 34
+    items = TOOLBOX.split(" · ")
+    max_w = w - pad * 2 - label_w
+    rows, row = [], []
+    for item in items:
+        candidate = sep.join(row + [item])
+        if row and f["body"].width(candidate, size) > max_w:
+            rows.append(row)
+            row = [item]
+        else:
+            row.append(item)
+    rows.append(row)
+    h = pad * 2 + line_h * (len(rows) - 1) + 12
+    body = panel(w, h, c["surface"], c["line"], 14)
+    body += f["mono_medium"].text("TOOLBOX", 13, pad, pad + 11, c["muted"], tracking=0.16)
+    for i, row in enumerate(rows):
         parts = []
-        for j, item in enumerate(items.split(" · ")):
+        for j, item in enumerate(row):
             if j:
                 parts.append((sep, c["accent"]))
             parts.append((item, c["text"]))
-        body += f["body"].spans(parts, size, pad + label_w, y)
-        if i:
-            body += f'<rect x="{pad}" y="{_num(y - 30)}" width="{_num(w - 2 * pad)}" height="1" fill="{c["line"]}"/>'
-    label = "Toolbox. " + ". ".join(f"{a}: {b}" for a, b in TOOLBOX)
-    return document(w, h, label, body)
-
-
-def footer(f, c):
-    w, h, pad = 1200, 112, 36
-    body = (
-        panel(w, h, c["surface"], c["line"], 16)
-        + f["display"].spans([("AK", c["text"]), (".", c["accent"])], 40, pad, 70, tracking=-0.03)
-        + f["body"].spans(
-            [("Find me as ", c["muted"]), (HANDLE, c["text"]), (" everywhere", c["muted"])],
-            18, pad + 110, 63,
-        )
-        + f["mono_medium"].text(f"{SITE}/connect ↗", 14, w - pad, 62, c["accent"], anchor="end")
-    )
-    return document(w, h, f"AK. Find me as {HANDLE} everywhere: {SITE}/connect", body)
+        body += f["body"].spans(parts, size, pad + label_w, pad + 12 + i * line_h)
+    return document(w, h, "Toolbox: " + ", ".join(items), body)
 
 
 def main():
@@ -450,22 +423,27 @@ def main():
         "mono_medium": Face(mono, wght=500),
     }
 
+    # Start clean so renamed or retired images don't linger.
+    for old in ASSETS.glob("*.svg"):
+        old.unlink()
+
     written = []
     for theme, colours in PALETTES.items():
-        written.append(write("banner", theme, banner(faces, theme, colours)))
-        for slug, label, handle in BUTTONS:
+        written.append(write("banner", theme, banner(faces, colours)))
+        for slug, label in BUTTONS:
             written.append(
-                write(f"btn-{slug}", theme, button(faces, colours, label, handle, slug == "youtube"))
+                write(f"btn-{slug}", theme, button(faces, colours, label, slug == "youtube"))
             )
         for slug, number, title in SECTIONS:
-            written.append(write(f"h-{slug}", theme, heading(faces, colours, number, title)))
+            written.append(write(f"h-{slug}", theme, kicker(faces, colours, number, title)))
         for project in PROJECTS:
             written.append(write(f"card-{project[0]}", theme, card(faces, colours, *project)))
         written.append(write("toolbox", theme, toolbox(faces, colours)))
-        written.append(write("footer", theme, footer(faces, colours)))
 
+    total = sum(path.stat().st_size for path in written) / 1024
     for path in written:
         print(f"{path.relative_to(ROOT)}  {path.stat().st_size / 1024:.1f} KB")
+    print(f"{len(written)} files, {total:.0f} KB")
 
 
 if __name__ == "__main__":

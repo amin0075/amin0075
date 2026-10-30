@@ -59,16 +59,12 @@ function block(videos) {
   const thumbnails = videos
     .map(
       (video) =>
-        `  <a href="${video.url}"><img src="https://i.ytimg.com/vi/${video.id}/mqdefault.jpg" width="32%" alt="${attr(video.title)}"></a>`,
+        `<a href="${video.url}"><img src="https://i.ytimg.com/vi/${video.id}/mqdefault.jpg" width="32%" alt="${attr(video.title)}"></a>`,
     )
     .join("\n");
-  const titles = videos.map((video) => `- [${markdown(video.title)}](${video.url})`).join("\n");
+  const titles = videos.map((video) => `[${markdown(video.title)}](${video.url})`).join(" · ");
 
-  return [
-    `<p>\n${thumbnails}\n</p>`,
-    titles,
-    `Every video, searchable by topic, is on [amin-keshavarzi.com/videos](https://amin-keshavarzi.com/videos). New ones land on [YouTube](${SUBSCRIBE}) first.`,
-  ].join("\n\n");
+  return `<p>\n${thumbnails}\n</p>\n\n${titles} · [All videos](https://amin-keshavarzi.com/videos)`;
 }
 
 const [uploads, shorts] = await Promise.all([
