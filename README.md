@@ -15,7 +15,11 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-videos-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-videos-light.svg"><img src="assets/profile/h-videos-dark.svg" height="20" alt="Latest videos"></picture></h3>
 
 <!-- videos:start -->
-The first videos are on the way. [Subscribe on YouTube](https://www.youtube.com/@amin_decods?sub_confirmation=1) and they'll land in your feed.
+<p>
+<a href="https://www.youtube.com/shorts/lDNf4BrbjJM"><img src="https://i.ytimg.com/vi/lDNf4BrbjJM/mqdefault.jpg" width="32%" alt="Your Next.js links load pages before you click"></a>
+</p>
+
+[Your Next.js links load pages before you click](https://www.youtube.com/shorts/lDNf4BrbjJM) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
