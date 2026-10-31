@@ -8,7 +8,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID ?? "UChxpGJZb5VkK_VsRwtP4o8A";
-const SUBSCRIBE = "https://www.youtube.com/@amin_decods?sub_confirmation=1";
+const SUBSCRIBE = "https://www.youtube.com/@amin_decodes?sub_confirmation=1";
 const COUNT = 3;
 const START = "<!-- videos:start -->";
 const END = "<!-- videos:end -->";

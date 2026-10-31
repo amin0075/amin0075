@@ -64,7 +64,7 @@ PALETTES = {
     ),
 }
 
-HANDLE = "@amin_decods"
+HANDLE = "@amin_decodes"
 SITE = "amin-keshavarzi.com"
 
 
@@ -241,7 +241,7 @@ def banner(f, c):
     w, h, pad = 1200, 280, 56
     groups = [
         f["display"].spans(
-            [("amin", c["text"]), ("_", c["accent"]), ("decods", c["text"])],
+            [("amin", c["text"]), ("_", c["accent"]), ("decodes", c["text"])],
             26, pad, 70, tracking=-0.02,
         )
         + f["mono"].text(SITE, 13, w - pad, 66, c["muted"], tracking=0.02, anchor="end"),
