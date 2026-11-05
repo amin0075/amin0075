@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/shorts/dnWj2KfOI14"><img src="https://i.ytimg.com/vi/dnWj2KfOI14/mqdefault.jpg" width="32%" alt="Fix a time zone hydration error with one React line"></a>
 <a href="https://www.youtube.com/shorts/00YnKvF56aQ"><img src="https://i.ytimg.com/vi/00YnKvF56aQ/mqdefault.jpg" width="32%" alt="Claude Code path rules now load for new files"></a>
 <a href="https://www.youtube.com/shorts/UK5njZ2ijWI"><img src="https://i.ytimg.com/vi/UK5njZ2ijWI/mqdefault.jpg" width="32%" alt="Next.js view transitions: thumbnail to full page in 6 lines"></a>
-<a href="https://www.youtube.com/shorts/lDNf4BrbjJM"><img src="https://i.ytimg.com/vi/lDNf4BrbjJM/mqdefault.jpg" width="32%" alt="Your Next.js links load pages before you click"></a>
 </p>
 
-[Claude Code path rules now load for new files](https://www.youtube.com/shorts/00YnKvF56aQ) · [Next.js view transitions: thumbnail to full page in 6 lines](https://www.youtube.com/shorts/UK5njZ2ijWI) · [Your Next.js links load pages before you click](https://www.youtube.com/shorts/lDNf4BrbjJM) · [All videos](https://amin-keshavarzi.com/videos)
+[Fix a time zone hydration error with one React line](https://www.youtube.com/shorts/dnWj2KfOI14) · [Claude Code path rules now load for new files](https://www.youtube.com/shorts/00YnKvF56aQ) · [Next.js view transitions: thumbnail to full page in 6 lines](https://www.youtube.com/shorts/UK5njZ2ijWI) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
