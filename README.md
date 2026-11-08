@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/shorts/jZSTtg3OvVY"><img src="https://i.ytimg.com/vi/jZSTtg3OvVY/mqdefault.jpg" width="32%" alt="How Postgres finds 1 row in 10 million"></a>
 <a href="https://www.youtube.com/shorts/VpJItjjCuFM"><img src="https://i.ytimg.com/vi/VpJItjjCuFM/mqdefault.jpg" width="32%" alt="Junior vs senior prompt: same app, same Claude Code"></a>
 <a href="https://www.youtube.com/shorts/tZ_iIC3Byos"><img src="https://i.ytimg.com/vi/tZ_iIC3Byos/mqdefault.jpg" width="32%" alt="How Claude skills actually work (I logged the requests)"></a>
-<a href="https://www.youtube.com/shorts/pXS-29d6dA4"><img src="https://i.ytimg.com/vi/pXS-29d6dA4/mqdefault.jpg" width="32%" alt="Is your API key public? The NEXT_PUBLIC_ mistake AI makes"></a>
 </p>
 
-[Junior vs senior prompt: same app, same Claude Code](https://www.youtube.com/shorts/VpJItjjCuFM) · [How Claude skills actually work (I logged the requests)](https://www.youtube.com/shorts/tZ_iIC3Byos) · [Is your API key public? The NEXT\_PUBLIC\_ mistake AI makes](https://www.youtube.com/shorts/pXS-29d6dA4) · [All videos](https://amin-keshavarzi.com/videos)
+[How Postgres finds 1 row in 10 million](https://www.youtube.com/shorts/jZSTtg3OvVY) · [Junior vs senior prompt: same app, same Claude Code](https://www.youtube.com/shorts/VpJItjjCuFM) · [How Claude skills actually work (I logged the requests)](https://www.youtube.com/shorts/tZ_iIC3Byos) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
