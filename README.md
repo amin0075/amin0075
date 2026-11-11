@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/shorts/Y9agm7oegTQ"><img src="https://i.ytimg.com/vi/Y9agm7oegTQ/mqdefault.jpg" width="32%" alt="50 People Clicked Buy on My Last 10 Items"></a>
 <a href="https://www.youtube.com/shorts/_JZZ8wA6HG8"><img src="https://i.ytimg.com/vi/_JZZ8wA6HG8/mqdefault.jpg" width="32%" alt="6 Levels of Claude Code, One Real Demo Each"></a>
 <a href="https://www.youtube.com/shorts/jZSTtg3OvVY"><img src="https://i.ytimg.com/vi/jZSTtg3OvVY/mqdefault.jpg" width="32%" alt="How Postgres finds 1 row in 10 million"></a>
-<a href="https://www.youtube.com/shorts/VpJItjjCuFM"><img src="https://i.ytimg.com/vi/VpJItjjCuFM/mqdefault.jpg" width="32%" alt="Junior vs senior prompt: same app, same Claude Code"></a>
 </p>
 
-[6 Levels of Claude Code, One Real Demo Each](https://www.youtube.com/shorts/_JZZ8wA6HG8) · [How Postgres finds 1 row in 10 million](https://www.youtube.com/shorts/jZSTtg3OvVY) · [Junior vs senior prompt: same app, same Claude Code](https://www.youtube.com/shorts/VpJItjjCuFM) · [All videos](https://amin-keshavarzi.com/videos)
+[50 People Clicked Buy on My Last 10 Items](https://www.youtube.com/shorts/Y9agm7oegTQ) · [6 Levels of Claude Code, One Real Demo Each](https://www.youtube.com/shorts/_JZZ8wA6HG8) · [How Postgres finds 1 row in 10 million](https://www.youtube.com/shorts/jZSTtg3OvVY) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
