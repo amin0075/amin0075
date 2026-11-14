@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/shorts/UJB0oLnqmek"><img src="https://i.ytimg.com/vi/UJB0oLnqmek/mqdefault.jpg" width="32%" alt="The 4 Tells That Make a Page Look AI-Built"></a>
 <a href="https://www.youtube.com/shorts/mazW2tTIE-A"><img src="https://i.ytimg.com/vi/mazW2tTIE-A/mqdefault.jpg" width="32%" alt="How Next.js “use cache” Decides Whose Data to Give Back"></a>
 <a href="https://www.youtube.com/shorts/AWx3cc66KRo"><img src="https://i.ytimg.com/vi/AWx3cc66KRo/mqdefault.jpg" width="32%" alt="How an AI Agent Actually Works (It's a Loop)"></a>
-<a href="https://www.youtube.com/shorts/Y9agm7oegTQ"><img src="https://i.ytimg.com/vi/Y9agm7oegTQ/mqdefault.jpg" width="32%" alt="50 People Clicked Buy on My Last 10 Items"></a>
 </p>
 
-[How Next.js “use cache” Decides Whose Data to Give Back](https://www.youtube.com/shorts/mazW2tTIE-A) · [How an AI Agent Actually Works (It's a Loop)](https://www.youtube.com/shorts/AWx3cc66KRo) · [50 People Clicked Buy on My Last 10 Items](https://www.youtube.com/shorts/Y9agm7oegTQ) · [All videos](https://amin-keshavarzi.com/videos)
+[The 4 Tells That Make a Page Look AI-Built](https://www.youtube.com/shorts/UJB0oLnqmek) · [How Next.js “use cache” Decides Whose Data to Give Back](https://www.youtube.com/shorts/mazW2tTIE-A) · [How an AI Agent Actually Works (It's a Loop)](https://www.youtube.com/shorts/AWx3cc66KRo) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
