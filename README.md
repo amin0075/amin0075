@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/watch?v=K6KZwXZgC94"><img src="https://i.ytimg.com/vi/K6KZwXZgC94/mqdefault.jpg" width="32%" alt="Why Claude Code Forgets: Context Windows and Compaction"></a>
 <a href="https://www.youtube.com/shorts/cvQgXBjB4lc"><img src="https://i.ytimg.com/vi/cvQgXBjB4lc/mqdefault.jpg" width="32%" alt="Two Words Made My Next.js Page 51 kB Heavier"></a>
 <a href="https://www.youtube.com/shorts/UJB0oLnqmek"><img src="https://i.ytimg.com/vi/UJB0oLnqmek/mqdefault.jpg" width="32%" alt="The 4 Tells That Make a Page Look AI-Built"></a>
-<a href="https://www.youtube.com/shorts/mazW2tTIE-A"><img src="https://i.ytimg.com/vi/mazW2tTIE-A/mqdefault.jpg" width="32%" alt="How Next.js “use cache” Decides Whose Data to Give Back"></a>
 </p>
 
-[Two Words Made My Next.js Page 51 kB Heavier](https://www.youtube.com/shorts/cvQgXBjB4lc) · [The 4 Tells That Make a Page Look AI-Built](https://www.youtube.com/shorts/UJB0oLnqmek) · [How Next.js “use cache” Decides Whose Data to Give Back](https://www.youtube.com/shorts/mazW2tTIE-A) · [All videos](https://amin-keshavarzi.com/videos)
+[Why Claude Code Forgets: Context Windows and Compaction](https://www.youtube.com/watch?v=K6KZwXZgC94) · [Two Words Made My Next.js Page 51 kB Heavier](https://www.youtube.com/shorts/cvQgXBjB4lc) · [The 4 Tells That Make a Page Look AI-Built](https://www.youtube.com/shorts/UJB0oLnqmek) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
