@@ -16,12 +16,12 @@ Hey, I'm Amin, a full-stack engineer in Chester, UK, currently a frontend engine
 
 <!-- videos:start -->
 <p>
+<a href="https://www.youtube.com/shorts/ilPDaEOaCVs"><img src="https://i.ytimg.com/vi/ilPDaEOaCVs/mqdefault.jpg" width="32%" alt="My Next.js build went from 14 s to 5 s. Here's why"></a>
 <a href="https://www.youtube.com/shorts/YjlubbcQ7wY"><img src="https://i.ytimg.com/vi/YjlubbcQ7wY/mqdefault.jpg" width="32%" alt="Claude Code sends your whole conversation every time"></a>
 <a href="https://www.youtube.com/shorts/3lXGbg4ZBts"><img src="https://i.ytimg.com/vi/3lXGbg4ZBts/mqdefault.jpg" width="32%" alt="Claude Code forgot my rule (here's why)"></a>
-<a href="https://www.youtube.com/watch?v=K6KZwXZgC94"><img src="https://i.ytimg.com/vi/K6KZwXZgC94/mqdefault.jpg" width="32%" alt="Why Claude Code Forgets: Context Windows and Compaction"></a>
 </p>
 
-[Claude Code sends your whole conversation every time](https://www.youtube.com/shorts/YjlubbcQ7wY) · [Claude Code forgot my rule (here's why)](https://www.youtube.com/shorts/3lXGbg4ZBts) · [Why Claude Code Forgets: Context Windows and Compaction](https://www.youtube.com/watch?v=K6KZwXZgC94) · [All videos](https://amin-keshavarzi.com/videos)
+[My Next.js build went from 14 s to 5 s. Here's why](https://www.youtube.com/shorts/ilPDaEOaCVs) · [Claude Code sends your whole conversation every time](https://www.youtube.com/shorts/YjlubbcQ7wY) · [Claude Code forgot my rule (here's why)](https://www.youtube.com/shorts/3lXGbg4ZBts) · [All videos](https://amin-keshavarzi.com/videos)
 <!-- videos:end -->
 
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/h-work-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/h-work-light.svg"><img src="assets/profile/h-work-dark.svg" height="20" alt="Selected work"></picture></h3>
